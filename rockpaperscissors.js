@@ -19,6 +19,7 @@ function getComputerChoice() {
   return answer;
 }
 
+
 //console.log(getComputerChoice());
 
 
@@ -40,8 +41,8 @@ function getMyChoice() {
   return answer;
 }
 
-//console.log(getMyChoice());
 
+//console.log(getMyChoice());
 
 
 function singleRound(playerSelection, computerSelection) {
@@ -66,11 +67,18 @@ function singleRound(playerSelection, computerSelection) {
   return referee;
 }
 
-
 const computerSelection = getComputerChoice();
 const playerSelection = getMyChoice();
-console.log(computerSelection);
+
+
+//console.log(computerSelection);
 //console.log(playerSelection);
-console.log(singleRound(playerSelection, computerSelection));
+//console.log(singleRound(playerSelection, computerSelection));
+
+
+function game() {}
+
+console.log(game());
+
 
 
