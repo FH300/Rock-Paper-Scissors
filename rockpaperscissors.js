@@ -45,14 +45,23 @@ function getMyChoice() {
 
 
 function singleRound(playerSelection, computerSelection) {
-  
-  
+
   let referee;
-  
+
   if (computerSelection == playerSelection) {
     referee = 'tie';
-  } else {
-    referee = 'win';
+  } else if (computerSelection == 'Rock' && playerSelection == 'Scissors') {
+    referee = 'computer wins';
+  } else if (computerSelection == 'Rock' && playerSelection == 'Paper') {
+    referee = 'you win';
+  } else if (computerSelection == 'Paper' && playerSelection == 'Scissors') {
+    referee = 'you win';
+  } else if (computerSelection == 'Paper' && playerSelection == 'Rock') {
+    referee = 'computer wins';
+  }else if (computerSelection == 'Scissors' && playerSelection == 'Paper') {
+    referee = 'computer wins';
+  }else if (computerSelection == 'Scissors' && playerSelection == 'Rock') {
+    referee = 'you win';
   }
   return referee;
 }
