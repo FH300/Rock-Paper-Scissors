@@ -26,11 +26,10 @@ function getMyChoice() {
   
   const answerRock = 'Rock';
   const answerPaper = 'Paper';
-  const answerScissors = 'Scissors'
+  const answerScissors = 'Scissors';
   let answer;
   
-  let x = prompt('Choose one: Rock, Paper, Scissors!');
-  x = x.toUpperCase();
+  let x = prompt('Choose one: Rock, Paper, Scissors!').toUpperCase();
   if (x == 'ROCK') {
     answer = answerRock;
   } else if (x == 'PAPER') {
@@ -41,8 +40,28 @@ function getMyChoice() {
   return answer;
 }
 
-console.log(getMyChoice());
+//console.log(getMyChoice());
 
 
+
+function singleRound(playerSelection, computerSelection) {
+  
+  
+  let referee;
+  
+  if (computerSelection == playerSelection) {
+    referee = 'tie';
+  } else {
+    referee = 'win';
+  }
+  return referee;
+}
+
+
+const computerSelection = getComputerChoice();
+const playerSelection = getMyChoice();
+console.log(computerSelection);
+//console.log(playerSelection);
+console.log(singleRound(playerSelection, computerSelection));
 
 
