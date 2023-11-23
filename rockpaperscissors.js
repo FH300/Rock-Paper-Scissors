@@ -7,7 +7,7 @@ function getComputerChoice() {
   const rock = 'Rock';
   const paper = 'Paper';
   const scissors = 'Scissors';
-  let answer
+  let answer;
 
   if (random === 0) {
     answer = rock;
@@ -19,26 +19,30 @@ function getComputerChoice() {
   return answer;
 }
 
-
-let x;
-let y;
-let answerTrue = 'true';
-
-function test() {
-  prompt('hallo', x);
-
-  if (x === 2) {
-  answerTrue = answerTrue;
-}
-return answerTrue;
-}
-
-console.log(test());
+//console.log(getComputerChoice());
 
 
-// function singleRound(playerSelection, computerSelection) {
+function getMyChoice() {
   
-//}
- 
+  const answerRock = 'Rock';
+  const answerPaper = 'Paper';
+  const answerScissors = 'Scissors'
+  let answer;
+  
+  let x = prompt('Choose one: Rock, Paper, Scissors!');
+  x = x.toUpperCase();
+  if (x == 'ROCK') {
+    answer = answerRock;
+  } else if (x == 'PAPER') {
+    answer = answerPaper;
+  } else if (x == 'SCISSORS') {
+    answer = answerScissors;
+  }
+  return answer;
+}
 
-//??????????????
+console.log(getMyChoice());
+
+
+
+
