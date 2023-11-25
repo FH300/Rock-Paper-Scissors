@@ -1,13 +1,13 @@
 
- 
+ let random; 
   
 function getComputerChoice() {
     
-  let random = Math.floor(Math.random() * 3);
   const rock = 'Rock';
   const paper = 'Paper';
   const scissors = 'Scissors';
   let answer;
+  random = Math.floor(Math.random() * 3);
 
   if (random === 0) {
     answer = rock;
@@ -20,63 +20,58 @@ function getComputerChoice() {
 }
 
 
-//console.log(getComputerChoice());
-
-
-function getMyChoice() {
-  
-  const answerRock = 'Rock';
-  const answerPaper = 'Paper';
-  const answerScissors = 'Scissors';
-  let answer;
-  
-  let x = prompt('Choose one: Rock, Paper, Scissors!').toUpperCase();
-  if (x == 'ROCK') {
-    answer = answerRock;
-  } else if (x == 'PAPER') {
-    answer = answerPaper;
-  } else if (x == 'SCISSORS') {
-    answer = answerScissors;
-  }
-  return answer;
-}
-
-
-//console.log(getMyChoice());
-
-
 function singleRound(playerSelection, computerSelection) {
 
   let referee;
-
+  
   if (computerSelection == playerSelection) {
     referee = 'tie';
-  } else if (computerSelection == 'Rock' && playerSelection == 'Scissors') {
+  } else if (computerSelection == 'ROCK' && playerSelection == 'SCISSORS') {
     referee = 'computer wins';
-  } else if (computerSelection == 'Rock' && playerSelection == 'Paper') {
+  } else if (computerSelection == 'ROCK' && playerSelection == 'PAPER') {
     referee = 'you win';
-  } else if (computerSelection == 'Paper' && playerSelection == 'Scissors') {
+  } else if (computerSelection == 'PAPER' && playerSelection == 'SCISSORS') {
     referee = 'you win';
-  } else if (computerSelection == 'Paper' && playerSelection == 'Rock') {
+  } else if (computerSelection == 'PAPER' && playerSelection == 'ROCK') {
     referee = 'computer wins';
-  }else if (computerSelection == 'Scissors' && playerSelection == 'Paper') {
+  }else if (computerSelection == 'SCISSORS' && playerSelection == 'PAPER') {
     referee = 'computer wins';
-  }else if (computerSelection == 'Scissors' && playerSelection == 'Rock') {
+  }else if (computerSelection == 'SCISSORS' && playerSelection == 'ROCK') {
     referee = 'you win';
   }
   return referee;
 }
 
-const computerSelection = getComputerChoice();
-const playerSelection = getMyChoice();
+
+const computerSelection = getComputerChoice().toUpperCase();
+let playerSelection;
 
 
-//console.log(computerSelection);
-//console.log(playerSelection);
-//console.log(singleRound(playerSelection, computerSelection));
+function game() {
 
+  let refereeanswer;
+  let round = singleRound(computerSelection, playerSelection);
+  
+  playerSelection = prompt('Enter Rock, Paper, Scissors').toUpperCase();
+  getComputerChoice();
+  console.log(random);
+  console.log(computerSelection);
+  console.log(playerSelection);
 
-function game() {}
+  if (round == 'tie') {
+    refereeanswer = 'tie';
+    console.log(refereeanswer);
+  } else if (round == 'you win') {
+    refereeanswer = 'you win';
+    console.log(refereeanswer);
+  } else {
+    refereeanswer = 'computer wins';
+  } return refereeanswer;
+}
+
+for(let i = 0; i < 5; i++) {
+  game();
+}
 
 console.log(game());
 
