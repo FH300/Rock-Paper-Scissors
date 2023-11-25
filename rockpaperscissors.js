@@ -71,6 +71,17 @@ function game() {
     console.log( yourCount + yourScore);
     console.log(computerCount + computerScore);    
   }
+
+  let winner;
+  
+  if (yourScore > computerScore) {
+    winner = 'YOU WON THE GAME!!'
+  } else if (yourScore < computerScore) {
+    winner = 'YOU LOST, GAME OVER!!'
+  } else {
+    winner = 'IT\'S A TIE, YOU NEED TO PLAY AGAIN!!'
+  }
+   console.log(winner);
 }
 
 game();
