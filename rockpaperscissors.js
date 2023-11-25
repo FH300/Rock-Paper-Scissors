@@ -43,7 +43,7 @@ function singleRound(playerSelection, computerSelection) {
     referee = 'you win';
   }
 
-  console.log(referee);
+  return referee;
 }
 
 let referee;
@@ -52,8 +52,24 @@ let playerSelection;
 
 
 function game() {
+  
+  let yourScore = 0;
+  let computerScore = 0 ;
+  let yourCount = 'Your score is: '
+  let computerCount = 'The computers score is: '
+  
   for (i = 0; i < 5; i++) {
     singleRound(playerSelection, computerSelection);
+    console.log(referee);
+  
+    if (referee == 'computer wins') {
+      computerScore++;
+    } else if (referee == 'you win') {
+      yourScore++;
+    }
+
+    console.log( yourCount + yourScore);
+    console.log(computerCount + computerScore);    
   }
 }
 
