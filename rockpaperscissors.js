@@ -1,5 +1,5 @@
 
- let random; 
+ 
   
 function getComputerChoice() {
     
@@ -19,11 +19,14 @@ function getComputerChoice() {
   return answer;
 }
 
+let random; 
+
 
 function singleRound(playerSelection, computerSelection) {
-
-  let referee;
   
+  playerSelection = prompt('enter something').toUpperCase();
+  computerSelection = getComputerChoice().toUpperCase();
+
   if (computerSelection == playerSelection) {
     referee = 'tie';
   } else if (computerSelection == 'ROCK' && playerSelection == 'SCISSORS') {
@@ -34,46 +37,26 @@ function singleRound(playerSelection, computerSelection) {
     referee = 'you win';
   } else if (computerSelection == 'PAPER' && playerSelection == 'ROCK') {
     referee = 'computer wins';
-  }else if (computerSelection == 'SCISSORS' && playerSelection == 'PAPER') {
+  } else if (computerSelection == 'SCISSORS' && playerSelection == 'PAPER') {
     referee = 'computer wins';
-  }else if (computerSelection == 'SCISSORS' && playerSelection == 'ROCK') {
+  } else if (computerSelection == 'SCISSORS' && playerSelection == 'ROCK') {
     referee = 'you win';
   }
-  return referee;
+
+  console.log(referee);
 }
 
-
-const computerSelection = getComputerChoice().toUpperCase();
+let referee;
+let computerSelection;
 let playerSelection;
 
 
 function game() {
-
-  let refereeanswer;
-  let round = singleRound(computerSelection, playerSelection);
-  
-  playerSelection = prompt('Enter Rock, Paper, Scissors').toUpperCase();
-  getComputerChoice();
-  console.log(random);
-  console.log(computerSelection);
-  console.log(playerSelection);
-
-  if (round == 'tie') {
-    refereeanswer = 'tie';
-    console.log(refereeanswer);
-  } else if (round == 'you win') {
-    refereeanswer = 'you win';
-    console.log(refereeanswer);
-  } else {
-    refereeanswer = 'computer wins';
-  } return refereeanswer;
+  for (i = 0; i < 5; i++) {
+    singleRound(playerSelection, computerSelection);
+  }
 }
 
-for(let i = 0; i < 5; i++) {
-  game();
-}
-
-console.log(game());
-
+game();
 
 
