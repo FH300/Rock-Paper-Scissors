@@ -24,7 +24,6 @@ let random;
 
 function singleRound(playerSelection, computerSelection) {
   
-  playerSelection = prompt('enter something').toUpperCase();
   computerSelection = getComputerChoice().toUpperCase();
 
   if (computerSelection == playerSelection) {
@@ -51,39 +50,76 @@ let computerSelection;
 let playerSelection;
 
 
-function game() {
+//function game() {
   
-  let yourScore = 0;
-  let computerScore = 0 ;
-  let yourCount = 'Your score is: '
-  let computerCount = 'The computers score is: '
+  //let yourScore = 0;
+  //let computerScore = 0 ;
+  //let yourCount = 'Your score is: '
+  //let computerCount = 'The computers score is: '
   
-  for (i = 0; i < 5; i++) {
-    singleRound(playerSelection, computerSelection);
-    console.log(referee);
+  //for (i = 0; i < 5; i++) {
+    //singleRound(playerSelection, computerSelection);
+    //console.log(referee);
   
-    if (referee == 'computer wins') {
-      computerScore++;
-    } else if (referee == 'you win') {
-      yourScore++;
-    }
+    //if (referee == 'computer wins') {
+      //computerScore++;
+    //} else if (referee == 'you win') {
+      //yourScore++;
+    //}
 
-    console.log( yourCount + yourScore);
-    console.log(computerCount + computerScore);    
-  }
+    //console.log( yourCount + yourScore);
+    //console.log(computerCount + computerScore);    
+  //}
 
-  let winner;
+  //let winner;
   
-  if (yourScore > computerScore) {
-    winner = 'YOU WON THE GAME!!'
-  } else if (yourScore < computerScore) {
-    winner = 'YOU LOST, GAME OVER!!'
-  } else {
-    winner = 'IT\'S A TIE, YOU NEED TO PLAY AGAIN!!'
+  //if (yourScore > computerScore) {
+    //winner = 'YOU WON THE GAME!!'
+  //} else if (yourScore < computerScore) {
+    //winner = 'YOU LOST, GAME OVER!!'
+  //} else {
+    //winner = 'IT\'S A TIE, YOU NEED TO PLAY AGAIN!!'
+  //}
+   //console.log(winner);
+//}
+
+//game();
+
+
+let rockBtn = document.querySelector('#rock');
+let paperBtn = document.querySelector('#paper');
+let scissorsBtn = document.querySelector('#scissors');
+let resultsDiv = document.querySelector('#results');
+
+let yourScore = 0;
+let computerScore = 0;
+
+
+
+rockBtn.addEventListener('click', () => {
+  singleRound('ROCK', computerSelection);
+  if (referee == 'you win') {
+    yourScore++;
+  } else if (referee == 'computer wins') {
+    computerScore++;
   }
-   console.log(winner);
+});
+
+paperBtn.addEventListener('click', () => {
+  singleRound('PAPER', computerSelection);
+
+});
+
+scissorsBtn.addEventListener('click', () => {
+  singleRound('SCISSORS', computerSelection);
+
+});
+
+if (referee == 'you win') {
+  yourScore++;
+} else if (referee == 'computer wins') {
+  computerScore++;
 }
 
-game();
-
-
+resultsDiv.textContent = referee + ` --Your score is: ${yourScore} ` + 
+  `The computer\'s score is ${computerScore}`;
