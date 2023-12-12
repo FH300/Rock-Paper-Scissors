@@ -49,43 +49,6 @@ let referee;
 let computerSelection;
 let playerSelection;
 
-
-//function game() {
-  
-  //let yourScore = 0;
-  //let computerScore = 0 ;
-  //let yourCount = 'Your score is: '
-  //let computerCount = 'The computers score is: '
-  
-  //for (i = 0; i < 5; i++) {
-    //singleRound(playerSelection, computerSelection);
-    //console.log(referee);
-  
-    //if (referee == 'computer wins') {
-      //computerScore++;
-    //} else if (referee == 'you win') {
-      //yourScore++;
-    //}
-
-    //console.log( yourCount + yourScore);
-    //console.log(computerCount + computerScore);    
-  //}
-
-  //let winner;
-  
-  //if (yourScore > computerScore) {
-    //winner = 'YOU WON THE GAME!!'
-  //} else if (yourScore < computerScore) {
-    //winner = 'YOU LOST, GAME OVER!!'
-  //} else {
-    //winner = 'IT\'S A TIE, YOU NEED TO PLAY AGAIN!!'
-  //}
-   //console.log(winner);
-//}
-
-//game();
-
-
 let rockBtn = document.querySelector('#rock');
 let paperBtn = document.querySelector('#paper');
 let scissorsBtn = document.querySelector('#scissors');
@@ -102,9 +65,18 @@ rockBtn.addEventListener('click', () => {
   } else if (referee == 'computer wins') {
     computerScore++;
   }
-  console.log(yourScore);
-  console.log(computerScore);
   resultsDiv.textContent = `Your score: ${yourScore} ` + `Computer\'s score: ${computerScore}`;
+  if (yourScore >= 5) {
+    resultsDiv.textContent = 'Your Score is 5, you won!!!';
+    rockBtn.disabled = true;
+    paperBtn.disabled = true;
+    scissorsBtn.disabled = true;
+  } else if (computerScore >= 5) {
+    resultsDiv.textContent = 'You lost! The computer has won 5 times.';
+    rockBtn.disabled = true;
+    paperBtn.disabled = true;
+    scissorsBtn.disabled = true;
+  }
 });
 
 paperBtn.addEventListener('click', () => {
@@ -115,9 +87,18 @@ paperBtn.addEventListener('click', () => {
   } else if (referee == 'computer wins') {
     computerScore++;
   }
-  console.log(yourScore);
-  console.log(computerScore);
   resultsDiv.textContent = `Your score: ${yourScore} ` + `Computer\'s score: ${computerScore}`;
+  if (yourScore >= 5) {
+    resultsDiv.textContent = 'Your Score is 5, you won!!!';
+    rockBtn.disabled = true;
+    paperBtn.disabled = true;
+    scissorsBtn.disabled = true;
+  } else if (computerScore >= 5) {
+    resultsDiv.textContent = 'You lost! The computer has won 5 times.';
+    rockBtn.disabled = true;
+    paperBtn.disabled = true;
+    scissorsBtn.disabled = true;
+  }
 });
 
 scissorsBtn.addEventListener('click', () => {
@@ -128,9 +109,18 @@ scissorsBtn.addEventListener('click', () => {
   } else if (referee == 'computer wins') {
     computerScore++;
   }
-  console.log(yourScore);
-  console.log(computerScore);
   resultsDiv.textContent = `Your score: ${yourScore} ` + `Computer\'s score: ${computerScore}`;
+  if (yourScore >= 5) {
+    resultsDiv.textContent = 'Your Score is 5, you won!!!';
+    rockBtn.disabled = true;
+    paperBtn.disabled = true;
+    scissorsBtn.disabled = true;
+  } else if (computerScore >= 5) {
+    resultsDiv.textContent = 'You lost! The computer has won 5 times.';
+    rockBtn.disabled = true;
+    paperBtn.disabled = true;
+    scissorsBtn.disabled = true;
+  }
 });
 
 
