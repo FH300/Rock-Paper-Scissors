@@ -94,32 +94,44 @@ let resultsDiv = document.querySelector('#results');
 let yourScore = 0;
 let computerScore = 0;
 
-
-
 rockBtn.addEventListener('click', () => {
   singleRound('ROCK', computerSelection);
+  console.log(referee);
   if (referee == 'you win') {
     yourScore++;
   } else if (referee == 'computer wins') {
     computerScore++;
   }
+  console.log(yourScore);
+  console.log(computerScore);
+  resultsDiv.textContent = `Your score: ${yourScore} ` + `Computer\'s score: ${computerScore}`;
 });
 
 paperBtn.addEventListener('click', () => {
   singleRound('PAPER', computerSelection);
-
+  console.log(referee);
+  if (referee == 'you win') {
+    yourScore++;
+  } else if (referee == 'computer wins') {
+    computerScore++;
+  }
+  console.log(yourScore);
+  console.log(computerScore);
+  resultsDiv.textContent = `Your score: ${yourScore} ` + `Computer\'s score: ${computerScore}`;
 });
 
 scissorsBtn.addEventListener('click', () => {
   singleRound('SCISSORS', computerSelection);
-
+  console.log(referee);
+  if (referee == 'you win') {
+    yourScore++;
+  } else if (referee == 'computer wins') {
+    computerScore++;
+  }
+  console.log(yourScore);
+  console.log(computerScore);
+  resultsDiv.textContent = `Your score: ${yourScore} ` + `Computer\'s score: ${computerScore}`;
 });
 
-if (referee == 'you win') {
-  yourScore++;
-} else if (referee == 'computer wins') {
-  computerScore++;
-}
 
-resultsDiv.textContent = referee + ` --Your score is: ${yourScore} ` + 
-  `The computer\'s score is ${computerScore}`;
+
