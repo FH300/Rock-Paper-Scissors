@@ -1,0 +1,26 @@
+.button {
+  background-color: rgba(0, 0, 0, 0.242);
+}
+
+.fulldiv {
+  display: flex;
+  flex-direction: column;
+  background-image: url('./Ulquiorra_Anime.webp');
+  background-size: 60% 400%;
+  background-repeat: unset;
+  background-attachment: fixed;
+  height: 990px;
+}
+.buttondiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 400px;
+  margin-bottom: 100px;
+}
+
+.resultsdiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
