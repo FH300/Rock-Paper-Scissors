@@ -1,6 +1,4 @@
 
- 
-  
 function getComputerChoice() {
     
   const rock = 'Rock';
