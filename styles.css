@@ -5,13 +5,13 @@ body {
 }
 
 .button {
-  background-color: rgb(33, 33, 33);
+  background-color: rgb(22, 22, 22);
   color: rgb(255, 255, 255);
   border: none;
   border-radius: 12px;
   padding-top: 30px;
   padding-bottom: 30px;
-  width: 100px;
+  width: 130px;
   font-weight: bold;
 }
 
@@ -27,7 +27,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 30px;
+  gap: 20px;
 }
 
 .buttonresults {
@@ -46,12 +46,13 @@ body {
 
 .buttondiv {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
 
-.resultsdiv {
+.resultsdivfull {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -59,6 +60,32 @@ body {
 #results {
   height: 20px;
   color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#resultsTwo {
+  height: 20px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#referee {
+  height: 20px;
+  color: rgb(245, 255, 178);
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#reloadButton {
+  background-color: rgb(22, 22, 22);
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 12px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  width: 580px;
   font-weight: bold;
   font-size: 20px;
 }
